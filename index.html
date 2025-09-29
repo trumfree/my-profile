@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập - Khoa</title>
+    <title>Đăng nhập - Khoa Đẹp Trai</title>
     <style>
         * {
             margin: 0;
@@ -17,258 +17,368 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #0f0f1a;
+            background: #000;
             overflow: hidden;
         }
 
-        .anime-background {
+        .video-background {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: linear-gradient(45deg, #ff0080, #00ffcc, #ffcc00, #cc00ff);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            opacity: 0.7;
         }
 
-        .anime-overlay {
+        .video-background video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
             position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 15, 26, 0.7);
-        }
-
-        .anime-characters {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .character {
-            position: absolute;
-            width: 150px;
-            height: 200px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: 0.6;
-        }
-
-        .character:nth-child(1) {
-            top: 10%;
-            left: 5%;
-            background-image: url('https://i.pinimg.com/originals/5c/8f/f3/5c8ff3d6a8e9d6e4d4c4e4b4e4b4e4b4.png');
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .character:nth-child(2) {
-            top: 60%;
-            right: 5%;
-            background-image: url('https://i.pinimg.com/originals/9c/1f/8a/9c1f8a4e4b4e4b4e4b4e4b4e4b4e4b4.png');
-            animation: float 10s ease-in-out infinite 1s;
-        }
-
-        .character:nth-child(3) {
-            bottom: 10%;
-            left: 15%;
-            background-image: url('https://i.pinimg.com/originals/7c/3f/8a/7c3f8a4e4b4e4b4e4b4e4b4e4b4e4b4.png');
-            animation: float 12s ease-in-out infinite 2s;
+            background: rgba(0, 0, 0, 0.6);
         }
 
         .login-container {
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             border-radius: 20px;
-            padding: 40px;
-            width: 400px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            width: 450px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             text-align: center;
             z-index: 1;
+            position: relative;
         }
 
         .login-title {
             color: #fff;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+            font-weight: bold;
         }
 
         .login-subtitle {
-            color: #ccc;
-            margin-bottom: 30px;
-            font-size: 1rem;
+            color: #e0e0e0;
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
         .input-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-align: left;
         }
 
         .input-group label {
             display: block;
             color: #fff;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         .input-group input {
             width: 100%;
-            padding: 12px 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
             color: #fff;
-            font-size: 1rem;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
         }
 
         .input-group input:focus {
             outline: none;
-            border-color: #ff0080;
-            box-shadow: 0 0 10px rgba(255, 0, 128, 0.5);
+            border-color: #ff2d95;
+            box-shadow: 0 0 20px rgba(255, 45, 149, 0.6);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
         }
 
         .login-btn {
             width: 100%;
-            padding: 12px;
-            background: linear-gradient(45deg, #ff0080, #cc00ff);
+            padding: 16px;
+            background: linear-gradient(45deg, #ff2d95, #ff6b6b);
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             color: #fff;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 10px;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .login-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 0, 128, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 45, 149, 0.4);
+            background: linear-gradient(45deg, #ff6b6b, #ff2d95);
         }
 
         .message {
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 5px;
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 10px;
             display: none;
+            font-weight: bold;
         }
 
         .success {
-            background: rgba(0, 255, 0, 0.2);
-            color: #0f0;
-            border: 1px solid #0f0;
+            background: rgba(0, 255, 100, 0.2);
+            color: #00ff64;
+            border: 2px solid #00ff64;
         }
 
         .error {
-            background: rgba(255, 0, 0, 0.2);
-            color: #f00;
-            border: 1px solid #f00;
+            background: rgba(255, 50, 50, 0.2);
+            color: #ff3232;
+            border: 2px solid #ff3232;
         }
 
         .footer {
-            margin-top: 20px;
-            color: #aaa;
-            font-size: 0.8rem;
+            margin-top: 25px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
         }
 
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(5deg);
-            }
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
+        .music-control i {
+            color: white;
+            font-size: 1.5rem;
         }
 
-        @media (max-width: 500px) {
-            .login-container {
-                width: 90%;
-                padding: 30px 20px;
-            }
-            
-            .character {
-                width: 100px;
-                height: 150px;
-            }
+        .dashboard {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+        }
+
+        .dashboard-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 60px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+        }
+
+        .dashboard h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ff2d95;
+            text-shadow: 0 0 20px rgba(255, 45, 149, 0.7);
+        }
+
+        .dashboard p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+        }
+
+        .logout-btn {
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #ff2d95, #ff6b6b);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 45, 149, 0.4);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); }
+            50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 45, 149, 0.5); }
+        }
+
+        .glow-text {
+            animation: glow 2s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
-    <div class="anime-background">
-        <div class="anime-overlay"></div>
-        <div class="anime-characters">
-            <div class="character"></div>
-            <div class="character"></div>
-            <div class="character"></div>
-        </div>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video id="bgVideo" autoplay muted loop>
+            <!-- THAY THẾ ĐƯỜNG DẪN NÀY BẰNG VIDEO CỦA BẠN -->
+            <source src="background-video.mp4" type="video/mp4">
+            <!-- Dự phòng nếu video không load được -->
+            <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
     </div>
 
-    <div class="login-container">
-        <h1 class="login-title">Chào mừng</h1>
-        <p class="login-subtitle">Đăng nhập vào tài khoản của Khoa</p>
+    <!-- Music Control -->
+    <div class="music-control" id="musicControl">
+        <i>🔊</i>
+    </div>
+
+    <!-- Login Form -->
+    <div class="login-container fade-in">
+        <h1 class="login-title glow-text">Khoa</h1>
+        <p class="login-subtitle">Đăng nhập vào thế giới anime</p>
         
         <form id="loginForm">
             <div class="input-group">
                 <label for="username">Tên đăng nhập</label>
-                <input type="text" id="username" placeholder="Nhập tên đăng nhập">
+                <input type="text" id="username" placeholder="Nhập tên đăng nhập" autocomplete="off">
             </div>
             
             <div class="input-group">
                 <label for="password">Mật khẩu</label>
-                <input type="password" id="password" placeholder="Nhập mật khẩu">
+                <input type="password" id="password" placeholder="Nhập mật khẩu" autocomplete="off">
             </div>
             
-            <button type="submit" class="login-btn">Đăng nhập</button>
+            <button type="submit" class="login-btn">ĐĂNG NHẬP</button>
         </form>
         
         <div id="message" class="message"></div>
         
         <div class="footer">
-            Tài khoản: khoa | Mật khẩu: khoadeptrai
+            Tài khoản: <strong>khoa</strong> | Mật khẩu: <strong>khoadeptrai</strong>
+        </div>
+    </div>
+
+    <!-- Dashboard (sau khi đăng nhập) -->
+    <div class="dashboard" id="dashboard">
+        <div class="dashboard-content fade-in">
+            <h1>Chào mừng Khoa đẹp trai!</h1>
+            <p>Bạn đã đăng nhập thành công vào thế giới anime</p>
+            <button class="logout-btn" onclick="logout()">ĐĂNG XUẤT</button>
         </div>
     </div>
 
     <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        // Lấy các phần tử DOM
+        const loginForm = document.getElementById('loginForm');
+        const message = document.getElementById('message');
+        const dashboard = document.getElementById('dashboard');
+        const bgVideo = document.getElementById('bgVideo');
+        const musicControl = document.getElementById('musicControl');
+        
+        // Biến để theo dõi trạng thái âm thanh
+        let isMuted = true;
+
+        // Xử lý đăng nhập
+        loginForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
-            const message = document.getElementById('message');
             
             if (username === 'khoa' && password === 'khoadeptrai') {
+                // Đăng nhập thành công
                 message.textContent = 'Đăng nhập thành công! Chào mừng Khoa đẹp trai!';
                 message.className = 'message success';
                 message.style.display = 'block';
                 
-                // Chuyển hướng sau 2 giây
+                // Hiệu ứng chuyển trang
                 setTimeout(() => {
-                    window.location.href = 'dashboard.html'; // Thay đổi URL này theo nhu cầu
-                }, 2000);
+                    document.querySelector('.login-container').style.display = 'none';
+                    dashboard.style.display = 'flex';
+                }, 1500);
+                
             } else {
-                message.textContent = 'Tên đăng nhập hoặc mật khẩu không đúng!';
+                // Đăng nhập thất bại
+                message.textContent = 'Sai tên đăng nhập hoặc mật khẩu!';
                 message.className = 'message error';
                 message.style.display = 'block';
+                
+                // Hiệu ứng lắc form
+                loginForm.style.animation = 'shake 0.5s';
+                setTimeout(() => {
+                    loginForm.style.animation = '';
+                }, 500);
             }
         });
+
+        // Điều khiển âm thanh
+        musicControl.addEventListener('click', function() {
+            isMuted = !isMuted;
+            bgVideo.muted = isMuted;
+            musicControl.innerHTML = isMuted ? '<i>🔇</i>' : '<i>🔊</i>';
+        });
+
+        // Hàm đăng xuất
+        function logout() {
+            dashboard.style.display = 'none';
+            document.querySelector('.login-container').style.display = 'block';
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            message.style.display = 'none';
+        }
+
+        // Thêm hiệu ứng lắc cho CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-10px); }
+                75% { transform: translateX(10px); }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
