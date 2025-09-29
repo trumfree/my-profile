@@ -54,27 +54,26 @@
             background-size: contain;
             background-repeat: no-repeat;
             opacity: 0.6;
-            filter: brightness(0.8) saturate(1.2);
         }
 
         .character:nth-child(1) {
             top: 10%;
             left: 5%;
-            background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6f5b5c5c-6c5c-4c5c-9c5c-6c5c5c5c5c5c/dg1v1v1-5c5c5c5c-5c5c-5c5c-5c5c-5c5c5c5c5c5c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzZmNWI1YzVjLTZjNWMtNGM1Yy05YzVjLTZjNWM1YzVjNWM1Y1wvZGcxdjF2MS01YzVjNWM1Yy01YzVjLTVjNWMtNWM1Yy01YzVjNWM1YzVjNWMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.7Q7Q7Q7Q7Q7Q7Q7Q7Q7Q7Q7Q7Q7Q7Q7Q7Q7Q7Q7Q');
+            background-image: url('https://i.pinimg.com/originals/5c/8f/f3/5c8ff3d6a8e9d6e4d4c4e4b4e4b4e4b4.png');
             animation: float 8s ease-in-out infinite;
         }
 
         .character:nth-child(2) {
             top: 60%;
             right: 5%;
-            background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6f5b5c5c-6c5c-4c5c-9c5c-6c5c5c5c5c5c/dg1v1v2-5c5c5c5c-5c5c-5c5c-5c5c-5c5c5c5c5c5c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzZmNWI1YzVjLTZjNWMtNGM1Yy05YzVjLTZjNWM1YzVjNWM1Y1wvZGcxdjF2Mi01YzVjNWM1Yy01YzVjLTVjNWMtNWM1Yy01YzVjNWM1YzVjNWMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.8Q8Q8Q8Q8Q8Q8Q8Q8Q8Q8Q8Q8Q8Q8Q8Q8Q8Q8Q8Q');
+            background-image: url('https://i.pinimg.com/originals/9c/1f/8a/9c1f8a4e4b4e4b4e4b4e4b4e4b4e4b4.png');
             animation: float 10s ease-in-out infinite 1s;
         }
 
         .character:nth-child(3) {
             bottom: 10%;
             left: 15%;
-            background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6f5b5c5c-6c5c-4c5c-9c5c-6c5c5c5c5c5c/dg1v1v3-5c5c5c5c-5c5c-5c5c-5c5c-5c5c5c5c5c5c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzZmNWI1YzVjLTZjNWMtNGM1Yy05YzVjLTZjNWM1YzVjNWM1Y1wvZGcxdjF2My01YzVjNWM1Yy01YzVjLTVjNWMtNWM1Yy01YzVjNWM1YzVjNWMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.9Q9Q9Q9Q9Q9Q9Q9Q9Q9Q9Q9Q9Q9Q9Q9Q9Q9Q9Q9Q');
+            background-image: url('https://i.pinimg.com/originals/7c/3f/8a/7c3f8a4e4b4e4b4e4b4e4b4e4b4e4b4.png');
             animation: float 12s ease-in-out infinite 2s;
         }
 
@@ -260,79 +259,16 @@
                 message.className = 'message success';
                 message.style.display = 'block';
                 
-                // Tạo hiệu ứng chuyển trang
-                document.querySelector('.login-container').style.animation = 'fadeOut 1s forwards';
+                // Chuyển hướng sau 2 giây
                 setTimeout(() => {
-                    // Tạo trang dashboard đơn giản
-                    document.body.innerHTML = `
-                        <div class="dashboard">
-                            <div class="dashboard-content">
-                                <h1>Chào mừng Khoa đẹp trai!</h1>
-                                <p>Bạn đã đăng nhập thành công</p>
-                                <button onclick="location.reload()" class="logout-btn">Đăng xuất</button>
-                            </div>
-                        </div>
-                    `;
-                    
-                    // Thêm style cho dashboard
-                    const style = document.createElement('style');
-                    style.textContent = `
-                        .dashboard {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            min-height: 100vh;
-                            background: linear-gradient(45deg, #ff0080, #00ffcc, #ffcc00, #cc00ff);
-                            background-size: 400% 400%;
-                            animation: gradientShift 15s ease infinite;
-                        }
-                        .dashboard-content {
-                            background: rgba(255, 255, 255, 0.2);
-                            padding: 40px;
-                            border-radius: 20px;
-                            text-align: center;
-                            backdrop-filter: blur(10px);
-                            color: white;
-                        }
-                        .logout-btn {
-                            padding: 10px 20px;
-                            background: #ff0080;
-                            border: none;
-                            border-radius: 10px;
-                            color: white;
-                            cursor: pointer;
-                            margin-top: 20px;
-                        }
-                    `;
-                    document.head.appendChild(style);
-                }, 1000);
+                    window.location.href = 'dashboard.html'; // Thay đổi URL này theo nhu cầu
+                }, 2000);
             } else {
                 message.textContent = 'Tên đăng nhập hoặc mật khẩu không đúng!';
                 message.className = 'message error';
                 message.style.display = 'block';
-                
-                // Hiệu ứng lắc form khi nhập sai
-                document.querySelector('.login-container').style.animation = 'shake 0.5s';
-                setTimeout(() => {
-                    document.querySelector('.login-container').style.animation = '';
-                }, 500);
             }
         });
-
-        // Thêm keyframe animation cho hiệu ứng lắc
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes shake {
-                0%, 100% { transform: translateX(0); }
-                25% { transform: translateX(-10px); }
-                75% { transform: translateX(10px); }
-            }
-            @keyframes fadeOut {
-                from { opacity: 1; transform: scale(1); }
-                to { opacity: 0; transform: scale(0.8); }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
